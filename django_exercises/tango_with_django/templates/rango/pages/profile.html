@@ -1,0 +1,17 @@
+{% extends "rango/base.html" %}
+
+{% block content %}
+	{% if pages %}
+		<ul>
+			{% for p in pages %}
+				<li>
+					<a href="{% url 'twd:track' %}?pid={{ p.pid }}">
+						{{ p.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		No pages to show.
+	{% endif %}
+{% endblock %}
